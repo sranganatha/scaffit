@@ -1,0 +1,71 @@
+{
+  "name": "scaffit-templates",
+  "version": "1.0.0",
+  "description": "Open-source templates and boilerplate code for Scaffit scaffolds. Add authentication, payments, and more to your projects.",
+  "keywords": [
+    "scaffolding",
+    "cli",
+    "boilerplate",
+    "code-generator",
+    "developer-tools",
+    "nextjs",
+    "react",
+    "typescript",
+    "authentication",
+    "payments",
+    "stripe",
+    "prisma",
+    "environment-variables",
+    "prettier",
+    "eslint",
+    "saas",
+    "startup",
+    "productivity",
+    "automation",
+    "templates",
+    "nextauth",
+    "clerk",
+    "supabase",
+    "drizzle",
+    "resend",
+    "paddle",
+    "lemonsqueezy",
+    "openai",
+    "anthropic",
+    "vercel-ai",
+    "uploadthing",
+    "s3",
+    "posthog",
+    "plausible",
+    "sentry",
+    "axiom",
+    "github-actions",
+    "vercel-deploy",
+    "docker",
+    "vitest",
+    "playwright",
+    "multitenancy",
+    "waitlist",
+    "admin",
+    "rate-limit",
+    "websocket"
+  ],
+  "author": {
+    "name": "Santosh Hanumaiah Ranganatha",
+    "email": "santosh.ranganatha@gmail.com",
+    "url": "https://github.com/sranganatha"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scaffit/scaffit.git"
+  },
+  "homepage": "https://github.com/scaffit/scaffit#readme",
+  "bugs": {
+    "url": "https://github.com/scaffit/scaffit/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
+

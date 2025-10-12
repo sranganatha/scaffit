@@ -1,0 +1,10 @@
+{
+  "semi": {{semicolons}},
+  "singleQuote": {{singleQuotes}},
+  "tabWidth": {{tabWidth}},
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "endOfLine": "lf"
+}
+
+
