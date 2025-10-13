@@ -9,6 +9,8 @@
 
 ## What is Scaffit?
 
+**Scaffit** (pronounced "SCAFF-it") - "Scaffold" + "it" = "scaffold it for me"
+
 Scaffit is a comprehensive developer platform that revolutionizes how you add features to your projects. More than just a CLI tool, Scaffit provides a complete ecosystem of battle-tested, production-ready scaffolds that you can add with a single command. It combines the power of a CLI, web dashboard, and extensive scaffold library to eliminate boilerplate setup forever.
 
 ## Why Use Scaffit?
