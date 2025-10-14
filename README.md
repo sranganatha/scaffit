@@ -2,8 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/@scaffit/cli)](https://www.npmjs.com/package/@scaffit/cli)
 [![downloads](https://img.shields.io/npm/dm/@scaffit/cli)](https://www.npmjs.com/package/@scaffit/cli)
-[![license](https://img.shields.io/npm/l/@scaffit/cli)](https://github.com/scaffit/scaffit/blob/main/LICENSE)
-[![stars](https://img.shields.io/github/stars/scaffit/scaffit)](https://github.com/scaffit/scaffit)
+[![license](https://img.shields.io/npm/l/@scaffit/cli)](https://github.com/sranganatha/scaffit/blob/main/LICENSE)
+[![stars](https://img.shields.io/github/stars/sranganatha/scaffit)](https://github.com/sranganatha/scaffit)
 
 **The open-source developer tool that adds modular scaffolds to your projects.**
 
@@ -28,7 +28,7 @@ Generated code is fully yours - modify, extend, or remove as needed. No vendor l
 Add only what you need. No bloated templates or unused code cluttering your project.
 
 ### Framework Agnostic
-Works seamlessly with Next.js, React, Express, and more. One tool, multiple frameworks.
+Works seamlessly with Next.js, React, Vue, Angular, Svelte, Express, Fastify, and Node.js. One tool, multiple frameworks.
 
 ### Always Fresh
 Scaffolds are maintained and updated with the latest best practices. Stay current without the hassle.
