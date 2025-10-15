@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "{{TARGET}}",
+    "lib": [{{LIB}}],
+    "allowJs": {{ALLOW_JS}},
+    "skipLibCheck": {{SKIP_LIB_CHECK}},
+    "strict": {{STRICT}},
+    "noEmit": {{NO_EMIT}},
+    "esModuleInterop": {{ES_MODULE_INTEROP}},
+    "module": "{{MODULE}}",
+    "moduleResolution": "{{MODULE_RESOLUTION}}",
+    "resolveJsonModule": {{RESOLVE_JSON_MODULE}},
+    "isolatedModules": {{ISOLATED_MODULES}},
+    "jsx": "{{JSX}}",
+    "incremental": {{INCREMENTAL}},
+    {{PLUGINS}}
+    "baseUrl": "{{BASE_URL}}",
+    "paths": {
+      {{PATHS}}
+    }
+  },
+  "include": [{{INCLUDE}}],
+  "exclude": [{{EXCLUDE}}]
+}

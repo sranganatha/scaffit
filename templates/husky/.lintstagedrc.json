@@ -1,0 +1,5 @@
+{
+  "lint-staged": {
+    {{LINT_STAGED_RULES}}
+  }
+}
