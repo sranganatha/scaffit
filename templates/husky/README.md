@@ -1,6 +1,42 @@
 # Husky Git Hooks Template
 
-This template shows example Husky configurations for different frameworks.
+This template provides Husky Git hooks configuration for automated code quality.
+
+## Installation
+
+### Option 1: Using Scaffit CLI (Recommended)
+```bash
+# Install CLI globally
+npm install -g @scaffit/cli
+
+# Add Husky scaffold
+scaffit add husky
+```
+
+### Option 2: Direct npm package usage
+```bash
+# Install scaffold directly
+npm install @scaffit/husky
+
+# Use in your code
+import { setupHusky, previewHusky } from '@scaffit/husky';
+
+// Setup Husky with custom options
+const result = await setupHusky({
+  enablePreCommit: true,
+  enablePrePush: true,
+  enableCommitMsg: false,
+  projectRoot: './my-project'
+});
+
+// Preview changes before applying
+const preview = await previewHusky({
+  enablePreCommit: true,
+  enablePrePush: true
+});
+```
+
+**Note**: Both approaches require `@scaffit/core` to be installed (automatically handled).
 
 ## Pre-commit Hook
 

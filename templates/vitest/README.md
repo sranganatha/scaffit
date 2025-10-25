@@ -2,6 +2,42 @@
 
 This template provides a complete Vitest testing setup for your project.
 
+## Installation
+
+### Option 1: Using Scaffit CLI (Recommended)
+```bash
+# Install CLI globally
+npm install -g @scaffit/cli
+
+# Add Vitest scaffold
+scaffit add vitest
+```
+
+### Option 2: Direct npm package usage
+```bash
+# Install scaffold directly
+npm install @scaffit/vitest
+
+# Use in your code
+import { setupVitest, previewVitest } from '@scaffit/vitest';
+
+// Setup Vitest with custom options
+const result = await setupVitest({
+  addTestScripts: true,
+  addCoverage: true,
+  addUI: false,
+  projectRoot: './my-project'
+});
+
+// Preview changes before applying
+const preview = await previewVitest({
+  addTestScripts: true,
+  addCoverage: true
+});
+```
+
+**Note**: Both approaches require `@scaffit/core` to be installed (automatically handled).
+
 ## Files Generated
 
 - `vitest.config.ts` - Vitest configuration with framework-specific settings

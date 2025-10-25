@@ -2,6 +2,55 @@
 
 This template provides a complete, framework-agnostic environment variable setup with type-safe validation using Zod.
 
+## Installation
+
+### Option 1: Using Scaffit CLI (Recommended)
+```bash
+# Install CLI globally
+npm install -g @scaffit/cli
+
+# Add environment scaffold
+scaffit add env
+```
+
+### Option 2: Direct npm package usage
+```bash
+# Install scaffold directly
+npm install @scaffit/env
+
+# Use in your code
+import { setupEnv, previewEnv } from '@scaffit/env';
+
+// Setup environment variables with custom options
+const result = await setupEnv({
+  includeExamples: true,
+  useZod: true,
+  features: ['database', 'auth', 'apis'],
+  projectRoot: './my-project'
+});
+
+// Preview changes before applying
+const preview = await previewEnv({
+  useZod: true,
+  features: ['database', 'auth']
+});
+```
+
+**Note**: Both approaches require `@scaffit/core` to be installed (automatically handled).
+
+## Usage
+
+After scaffolding, you can immediately use environment variables:
+
+```bash
+# Copy the example file and fill in your values
+cp .env.example .env.local
+
+# Your environment variables are now validated and type-safe
+```
+
+**Note**: Environment setup is ready to use immediately after scaffolding.
+
 ## Features
 
 - **Framework Detection**: Automatically detects Next.js, React, Express, Vite, or Node.js projects

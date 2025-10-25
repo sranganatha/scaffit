@@ -1,6 +1,42 @@
 # TypeScript Configuration Template
 
-This template shows example TypeScript configurations for different frameworks.
+This template provides TypeScript configuration for different frameworks.
+
+## Installation
+
+### Option 1: Using Scaffit CLI (Recommended)
+```bash
+# Install CLI globally
+npm install -g @scaffit/cli
+
+# Add TypeScript scaffold
+scaffit add typescript
+```
+
+### Option 2: Direct npm package usage
+```bash
+# Install scaffold directly
+npm install @scaffit/typescript
+
+# Use in your code
+import { setupTypeScript, previewTypeScript } from '@scaffit/typescript';
+
+// Setup TypeScript with custom options
+const result = await setupTypeScript({
+  strictnessLevel: 'recommended',
+  includePathMapping: true,
+  includeBuildScripts: true,
+  projectRoot: './my-project'
+});
+
+// Preview changes before applying
+const preview = await previewTypeScript({
+  strictnessLevel: 'recommended',
+  includePathMapping: true
+});
+```
+
+**Note**: Both approaches require `@scaffit/core` to be installed (automatically handled).
 
 ## Next.js Configuration
 

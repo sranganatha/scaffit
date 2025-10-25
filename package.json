@@ -43,7 +43,13 @@
     "vercel-deploy",
     "docker",
     "vitest",
+    "jest",
+    "testing",
+    "unit-tests",
     "playwright",
+    "e2e-testing",
+    "browser-testing",
+    "automation",
     "multitenancy",
     "waitlist",
     "admin",
@@ -58,11 +64,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scaffit/scaffit.git"
+    "url": "https://github.com/sranganatha/scaffit.git"
   },
-  "homepage": "https://github.com/scaffit/scaffit#readme",
+  "homepage": "https://github.com/sranganatha/scaffit#readme",
   "bugs": {
-    "url": "https://github.com/scaffit/scaffit/issues"
+    "url": "https://github.com/sranganatha/scaffit/issues"
   },
   "engines": {
     "node": ">=20.0.0"

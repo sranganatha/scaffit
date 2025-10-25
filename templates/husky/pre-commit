@@ -1,4 +1,108 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint-staged
+# Pre-commit hook
+# This script runs before each commit
+
+echo "🔍 Running pre-commit checks..."
+
+# Check if we're in a git repository
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+  echo "❌ Not in a git repository"
+  exit 1
+fi
+
+# Staged files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$STAGED_FILES" ]; then
+  echo "ℹ️  No staged files to check"
+  exit 0
+fi
+
+echo "📁 Checking staged files:"
+echo "$STAGED_FILES"
+
+# Linting checks
+{{#if includeESLint}}
+echo "🔧 Running ESLint..."
+if ! npx eslint $STAGED_FILES --fix; then
+  echo "❌ ESLint checks failed"
+  exit 1
+fi
+echo "✅ ESLint checks passed"
+{{/if}}
+
+# Formatting checks
+{{#if includePrettier}}
+echo "🎨 Running Prettier..."
+if ! npx prettier --check $STAGED_FILES; then
+  echo "❌ Prettier formatting issues found"
+  echo "💡 Run 'npx prettier --write $STAGED_FILES' to fix"
+  exit 1
+fi
+echo "✅ Prettier checks passed"
+{{/if}}
+
+# Type checking
+{{#if includeTypeScript}}
+echo "📝 Running TypeScript type check..."
+if ! npx tsc --noEmit; then
+  echo "❌ TypeScript type check failed"
+  exit 1
+fi
+echo "✅ TypeScript type check passed"
+{{/if}}
+
+# Test checks
+{{#if includeJest}}
+echo "🧪 Running Jest tests..."
+if ! npm run test -- --passWithNoTests; then
+  echo "❌ Jest tests failed"
+  exit 1
+fi
+echo "✅ Jest tests passed"
+{{/if}}
+
+{{#if includeVitest}}
+echo "🧪 Running Vitest tests..."
+if ! npm run test -- --run; then
+  echo "❌ Vitest tests failed"
+  exit 1
+fi
+echo "✅ Vitest tests passed"
+{{/if}}
+
+# Build checks
+{{#if includeBuildCheck}}
+echo "🏗️  Running build check..."
+if ! npm run build; then
+  echo "❌ Build failed"
+  exit 1
+fi
+echo "✅ Build check passed"
+{{/if}}
+
+# Security checks
+{{#if includeSecurityCheck}}
+echo "🔒 Running security audit..."
+if ! npm audit --audit-level moderate; then
+  echo "❌ Security vulnerabilities found"
+  echo "💡 Run 'npm audit fix' to fix issues"
+  exit 1
+fi
+echo "✅ Security audit passed"
+{{/if}}
+
+# Commit message validation
+{{#if includeCommitlint}}
+echo "📝 Validating commit message..."
+if ! npx commitlint --edit $1; then
+  echo "❌ Commit message validation failed"
+  exit 1
+fi
+echo "✅ Commit message validation passed"
+{{/if}}
+
+echo "🎉 All pre-commit checks passed!"
+exit 0

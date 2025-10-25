@@ -1,6 +1,41 @@
 # Commitlint Configuration Template
 
-This template shows example commitlint configurations for conventional commits.
+This template provides commitlint configuration for conventional commits.
+
+## Installation
+
+### Option 1: Using Scaffit CLI (Recommended)
+```bash
+# Install CLI globally
+npm install -g @scaffit/cli
+
+# Add Commitlint scaffold
+scaffit add commitlint
+```
+
+### Option 2: Direct npm package usage
+```bash
+# Install scaffold directly
+npm install @scaffit/commitlint
+
+# Use in your code
+import { setupCommitlint, previewCommitlint } from '@scaffit/commitlint';
+
+// Setup Commitlint with custom options
+const result = await setupCommitlint({
+  strictnessLevel: 'recommended',
+  includeHuskyIntegration: true,
+  projectRoot: './my-project'
+});
+
+// Preview changes before applying
+const preview = await previewCommitlint({
+  strictnessLevel: 'recommended',
+  includeHuskyIntegration: true
+});
+```
+
+**Note**: Both approaches require `@scaffit/core` to be installed (automatically handled).
 
 ## Recommended Configuration
 

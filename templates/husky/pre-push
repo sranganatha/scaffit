@@ -1,4 +1,140 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run test
+# Pre-push hook
+# This script runs before pushing to remote
+
+echo "🚀 Running pre-push checks..."
+
+# Check if we're in a git repository
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+  echo "❌ Not in a git repository"
+  exit 1
+fi
+
+# Get current branch
+CURRENT_BRANCH=$(git branch --show-current)
+echo "📋 Current branch: $CURRENT_BRANCH"
+
+# Skip checks for certain branches
+{{#if skipBranches}}
+SKIP_BRANCHES="{{SKIP_BRANCHES}}"
+if echo "$SKIP_BRANCHES" | grep -q "$CURRENT_BRANCH"; then
+  echo "⏭️  Skipping checks for branch: $CURRENT_BRANCH"
+  exit 0
+fi
+{{/if}}
+
+# Run comprehensive tests
+{{#if includeJest}}
+echo "🧪 Running Jest tests..."
+if ! npm run test -- --coverage --passWithNoTests; then
+  echo "❌ Jest tests failed"
+  exit 1
+fi
+echo "✅ Jest tests passed"
+{{/if}}
+
+{{#if includeVitest}}
+echo "🧪 Running Vitest tests..."
+if ! npm run test -- --run --coverage; then
+  echo "❌ Vitest tests failed"
+  exit 1
+fi
+echo "✅ Vitest tests passed"
+{{/if}}
+
+{{#if includePlaywright}}
+echo "🎭 Running Playwright tests..."
+if ! npm run test:e2e -- --reporter=line; then
+  echo "❌ Playwright tests failed"
+  exit 1
+fi
+echo "✅ Playwright tests passed"
+{{/if}}
+
+# Build verification
+{{#if includeBuildCheck}}
+echo "🏗️  Running build verification..."
+if ! npm run build; then
+  echo "❌ Build failed"
+  exit 1
+fi
+echo "✅ Build verification passed"
+{{/if}}
+
+# Type checking
+{{#if includeTypeScript}}
+echo "📝 Running TypeScript type check..."
+if ! npx tsc --noEmit; then
+  echo "❌ TypeScript type check failed"
+  exit 1
+fi
+echo "✅ TypeScript type check passed"
+{{/if}}
+
+# Linting
+{{#if includeESLint}}
+echo "🔧 Running ESLint..."
+if ! npx eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0; then
+  echo "❌ ESLint checks failed"
+  exit 1
+fi
+echo "✅ ESLint checks passed"
+{{/if}}
+
+# Formatting
+{{#if includePrettier}}
+echo "🎨 Running Prettier..."
+if ! npx prettier --check .; then
+  echo "❌ Prettier formatting issues found"
+  echo "💡 Run 'npx prettier --write .' to fix"
+  exit 1
+fi
+echo "✅ Prettier checks passed"
+{{/if}}
+
+# Security audit
+{{#if includeSecurityCheck}}
+echo "🔒 Running security audit..."
+if ! npm audit --audit-level moderate; then
+  echo "❌ Security vulnerabilities found"
+  echo "💡 Run 'npm audit fix' to fix issues"
+  exit 1
+fi
+echo "✅ Security audit passed"
+{{/if}}
+
+# Dependency check
+{{#if includeDependencyCheck}}
+echo "📦 Checking dependencies..."
+if ! npm ls --depth=0; then
+  echo "❌ Dependency issues found"
+  exit 1
+fi
+echo "✅ Dependencies check passed"
+{{/if}}
+
+# Bundle size check
+{{#if includeBundleSizeCheck}}
+echo "📊 Checking bundle size..."
+if ! npm run bundle-size-check; then
+  echo "❌ Bundle size check failed"
+  exit 1
+fi
+echo "✅ Bundle size check passed"
+{{/if}}
+
+# Performance check
+{{#if includePerformanceCheck}}
+echo "⚡ Running performance check..."
+if ! npm run performance-check; then
+  echo "❌ Performance check failed"
+  exit 1
+fi
+echo "✅ Performance check passed"
+{{/if}}
+
+echo "🎉 All pre-push checks passed!"
+echo "🚀 Ready to push to $CURRENT_BRANCH"
+exit 0

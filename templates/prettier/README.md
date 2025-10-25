@@ -1,6 +1,55 @@
 # Prettier Configuration Template
 
-This template provides Prettier code formatting setup with optional ESLint integration.
+This template provides Prettier code formatting setup with framework-specific configurations.
+
+## Installation
+
+### Option 1: Using Scaffit CLI (Recommended)
+```bash
+# Install CLI globally
+npm install -g @scaffit/cli
+
+# Add Prettier scaffold
+scaffit add prettier
+```
+
+### Option 2: Direct npm package usage
+```bash
+# Install scaffold directly
+npm install @scaffit/prettier
+
+# Use in your code
+import { setupPrettier, previewPrettier } from '@scaffit/prettier';
+
+// Setup Prettier with custom options
+const result = await setupPrettier({
+  includeTailwindPlugin: true,
+  addFormatScripts: true,
+  projectRoot: './my-project'
+});
+
+// Preview changes before applying
+const preview = await previewPrettier({
+  includeTailwindPlugin: true,
+  addFormatScripts: true
+});
+```
+
+**Note**: Both approaches require `@scaffit/core` to be installed (automatically handled).
+
+## Usage
+
+After scaffolding, you can immediately format your code:
+
+```bash
+# Format all files
+npm run format
+
+# Check formatting without changing files
+npm run format:check
+```
+
+**Note**: Formatting is ready to use immediately after scaffolding.
 
 ## Files Generated
 

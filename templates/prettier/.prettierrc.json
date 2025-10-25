@@ -6,7 +6,37 @@
   "tabWidth": {{TAB_WIDTH}},
   "useTabs": {{USE_TABS}},
   "bracketSpacing": {{BRACKET_SPACING}},
+  "bracketSameLine": {{BRACKET_SAME_LINE}},
   "arrowParens": "{{ARROW_PARENS}}",
   "endOfLine": "{{END_OF_LINE}}",
-  "plugins": [{{PLUGINS}}]
+  "quoteProps": "{{QUOTE_PROPS}}",
+  "jsxSingleQuote": {{JSX_SINGLE_QUOTE}},
+  "proseWrap": "{{PROSE_WRAP}}",
+  "htmlWhitespaceSensitivity": "{{HTML_WHITESPACE}}",
+  "vueIndentScriptAndStyle": {{VUE_INDENT}},
+  "embeddedLanguageFormatting": "{{EMBEDDED_FORMATTING}}",
+  "singleAttributePerLine": {{SINGLE_ATTRIBUTE_PER_LINE}},
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": {{MD_PRINT_WIDTH}},
+        "proseWrap": "{{MD_PROSE_WRAP}}"
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": {{JSON_PRINT_WIDTH}},
+        "tabWidth": {{JSON_TAB_WIDTH}}
+      }
+    },
+    {
+      "files": "*.yaml",
+      "options": {
+        "tabWidth": {{YAML_TAB_WIDTH}},
+        "singleQuote": {{YAML_SINGLE_QUOTE}}
+      }
+    }
+  ]
 }
