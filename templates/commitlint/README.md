@@ -6,8 +6,14 @@ This template provides commitlint configuration for conventional commits.
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add Commitlint scaffold (no installation needed!)
+npx scaffit add commitlint
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add Commitlint scaffold
 scaffit add commitlint
@@ -147,4 +153,4 @@ revert: revert "feat: add experimental feature"
 
 ## Usage
 
-Run `scaffit add commitlint` to automatically configure commitlint for your project with conventional commits validation.
+Run `npx scaffit add commitlint` to automatically configure commitlint for your project with conventional commits validation.

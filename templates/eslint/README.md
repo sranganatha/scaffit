@@ -69,4 +69,4 @@ This template shows example ESLint configurations for different frameworks.
 
 ## Usage
 
-Run `scaffit add eslint` to automatically configure ESLint for your project based on the detected framework.
+Run `npx scaffit add eslint` to automatically configure ESLint for your project based on the detected framework.

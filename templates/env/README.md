@@ -6,8 +6,14 @@ This template provides a complete, framework-agnostic environment variable setup
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add environment scaffold (no installation needed!)
+npx scaffit add env
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add environment scaffold
 scaffit add env

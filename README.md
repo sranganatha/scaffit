@@ -35,16 +35,30 @@ Scaffolds are maintained and updated with the latest best practices. Stay curren
 
 ## Quick Start
 
-Install Scaffit globally:
+### Recommended: Use npx (No installation required!)
+
+```bash
+# Add any scaffold instantly
+npx scaffit add env
+npx scaffit add prettier
+npx scaffit add jest
+```
+
+### Alternative: Global Installation
+
+```bash
+# Install globally
+npm install -g scaffit
+
+# Then use directly
+scaffit add env
+```
+
+**Or use the scoped package:**
 
 ```bash
 npm install -g @scaffit/cli
-```
-
-Add your first scaffold:
-
-```bash
-scaffit add [scaffold]
+scaffit add env
 ```
 
 ## License

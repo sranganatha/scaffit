@@ -6,8 +6,14 @@ This template provides TypeScript configuration for different frameworks.
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add TypeScript scaffold (no installation needed!)
+npx scaffit add typescript
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add TypeScript scaffold
 scaffit add typescript
@@ -136,4 +142,4 @@ const preview = await previewTypeScript({
 
 ## Usage
 
-Run `scaffit add typescript` to automatically configure TypeScript for your project based on the detected framework.
+Run `npx scaffit add typescript` to automatically configure TypeScript for your project based on the detected framework.

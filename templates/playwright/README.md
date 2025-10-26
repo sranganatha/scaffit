@@ -6,8 +6,14 @@ This template provides a comprehensive Playwright E2E testing setup for your pro
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add Playwright scaffold (no installation needed!)
+npx scaffit add playwright
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add Playwright scaffold
 scaffit add playwright

@@ -6,8 +6,14 @@ This template provides a complete Vitest testing setup for your project.
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add Vitest scaffold (no installation needed!)
+npx scaffit add vitest
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add Vitest scaffold
 scaffit add vitest

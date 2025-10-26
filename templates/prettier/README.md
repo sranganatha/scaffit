@@ -6,8 +6,14 @@ This template provides Prettier code formatting setup with framework-specific co
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add Prettier scaffold (no installation needed!)
+npx scaffit add prettier
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add Prettier scaffold
 scaffit add prettier

@@ -6,8 +6,14 @@ This template provides Husky Git hooks configuration for automated code quality.
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add Husky scaffold (no installation needed!)
+npx scaffit add husky
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add Husky scaffold
 scaffit add husky
@@ -109,4 +115,4 @@ npm run test
 
 ## Usage
 
-Run `scaffit add husky` to automatically configure Husky git hooks for your project based on the detected framework.
+Run `npx scaffit add husky` to automatically configure Husky git hooks for your project based on the detected framework.

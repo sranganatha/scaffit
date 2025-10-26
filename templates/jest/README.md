@@ -6,8 +6,14 @@ This template provides a complete Jest testing setup for your project with frame
 
 ### Option 1: Using Scaffit CLI (Recommended)
 ```bash
+# Add Jest scaffold (no installation needed!)
+npx scaffit add jest
+```
+
+### Alternative: Global Installation
+```bash
 # Install CLI globally
-npm install -g @scaffit/cli
+npm install -g scaffit
 
 # Add Jest scaffold
 scaffit add jest
