@@ -49,6 +49,8 @@
     "playwright",
     "e2e-testing",
     "browser-testing",
+    "cypress",
+    "nextauth",
     "automation",
     "multitenancy",
     "waitlist",

@@ -42,6 +42,8 @@ Scaffolds are maintained and updated with the latest best practices. Stay curren
 npx scaffit add env
 npx scaffit add prettier
 npx scaffit add jest
+npx scaffit add cypress
+npx scaffit add nextauth
 ```
 
 ### Alternative: Global Installation
